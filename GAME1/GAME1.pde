@@ -29,7 +29,8 @@ float [] movingBar = new float [15];
 int bar;
 float point, redP, blueP, greenP;
 
-
+import processing.sound.*;
+SoundFile yum, deaddead, up, upss;
 Background[] background1;
 //Bars barz;                   IN CASE PREFER TO USE CLASSES
 //Gamee gamee;
@@ -43,6 +44,10 @@ void setup ()
   backSetup();
   pointNOtrue = 0;
   a17 = 30;
+  yum = new SoundFile(this, "yum.mp3");
+  up = new SoundFile(this, "up.mp3");
+  upss = new SoundFile(this, "upss.mp3");
+  deaddead = new SoundFile(this, "deaddead.mp3");
 }
 
 void draw()
@@ -349,6 +354,7 @@ void spikes()
     textAlign(CENTER);
     fill(144, 15, 15);
     text("......... ughwwAwpss", posx + 5, posy- 10);
+    upss.play();
   }
 }
 
@@ -364,6 +370,7 @@ void points()                  // POINTS TO COLLECT
     {
       pointScore = true;
       pointNOtrue++;
+      yum.play();
     }
   }
 }
@@ -474,6 +481,7 @@ void keyPressed() {
   if ( key == 'w' && objectCollision == true) 
   {
     vy = -10;
+    up.play();
     objectCollision = false;
   }
 }
@@ -587,5 +595,5 @@ void gameOverYES()
   fill(76, 167, 138);
   textMode(CENTER);
   text("NO MORE KILLING.", width/2, height/2);
-  frameRate(5);
+  deaddead.play();
 }
