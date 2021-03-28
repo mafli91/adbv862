@@ -1,0 +1,12 @@
+game
+game.deprecated
+game.used.eventListeners.lvl567
+game.used.eventListeners.otherLevels
+game.used.levels
+game.used.objects.collectable
+game.used.objects.enemy
+game.used.objects.enemy.boss
+game.used.objects.hero
+game.used.objects.other
+game.used.world
+game.used.world.GUI
